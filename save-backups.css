@@ -19,3 +19,7 @@
 #saveBackupsSheet #backupRecovery,#saveBackupsSheet #backupReplaceWarning{color:#f0c987}
 #saveBackupsSheet [hidden]{display:none!important}
 .backup-entry-link{position:fixed;left:16px;bottom:max(22px,env(safe-area-inset-bottom));z-index:6;padding:10px 12px;min-height:44px;box-sizing:border-box;color:#ead6a4;background:#081722d9;border:1px solid #88754f;font:14px Georgia,serif;text-decoration:none}
+/* Another tab already has the game open: show only the plain message and Reload game */
+#saveBackupsSheet.other-tab .backup-content>:not(#backupRecovery):not(:last-child),#saveBackupsSheet.other-tab #keepCurrentSave{display:none}
+#saveBackupsSheet.other-tab #backupRecovery{font:15px/1.5 Georgia,serif!important;text-transform:none;letter-spacing:normal}
+#saveBackupsSheet.other-tab{bottom:auto;top:max(24px,20dvh)}

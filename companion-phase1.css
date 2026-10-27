@@ -10,3 +10,5 @@
 .phase1-art.reveal-unit{width:135px;height:155px;margin:20px auto}
 /* The legacy square portrait grid must not expand beyond a narrow Party frame. */
 .art-rebuild-preview #game .lore-card .dock-art-stage>.phase1-art{position:absolute;inset:0;aspect-ratio:auto;min-width:0;min-height:0;width:100%!important;height:100%!important}
+/* Companion art stays hidden until its picture is set, so its name (the alt text) never flashes in its place */
+img[data-phase1]:not([data-loaded]){visibility:hidden}

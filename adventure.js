@@ -72,5 +72,5 @@ function bootSavedGame(result){
 
 }
 if(globalThis.LoreOwnershipAdventure)globalThis.LoreOwnershipAdventure.connect(()=>state,save,draw);
-if(INTRO_PREVIEW)bootSavedGame({kind:'missing'});else saveRepo.start(bootSavedGame,e=>{savePaused=true;saveProtected=true;globalThis.LoreSaveBackups.protect(e.message);});
+if(INTRO_PREVIEW)bootSavedGame({kind:'missing'});else saveRepo.start(bootSavedGame,e=>{savePaused=true;saveProtected=true;globalThis.LoreSaveBackups.protect(e.message);if(e.code==='writer'){$('saveBackupsSheet').classList.add('other-tab');$('saveBackupTitle').textContent='Already open';}});
 setInterval(()=>saveRepo.heartbeat(),10000);

@@ -6,7 +6,7 @@
 .game .omnidex-button.has-unseen:after,.game .journal-button.has-rewards:after,.game .journal-button.has-progress:after{content:'';display:block;position:absolute;right:5px;top:3px;width:8px;height:8px;rotate:45deg;transform:none;border-radius:0;border:1px solid #f5dc96;background:#ef5b41;box-shadow:none;pointer-events:none}
 .game .journal-button.has-progress:after{width:5px;height:5px;background:#a38c59;box-shadow:none}
 .game .journal-button.has-rewards img{filter:drop-shadow(0 0 4px #dcb56899)}
-.game .quest-completion-notice{display:block;width:max-content;max-width:95px;padding:2px 4px;margin:2px auto 0;border:1px solid #b18a45;background:linear-gradient(#9b702d,#68471e);color:#fff0c2;font:10px/1.25 Georgia,serif!important;white-space:nowrap;letter-spacing:0;box-shadow:0 1px 3px #0006;text-shadow:0 1px #39250d}
+.game .quest-completion-notice{display:block;width:max-content;max-width:120px;padding:2px 4px;margin:2px auto 0;border:1px solid #b18a45;background:linear-gradient(#9b702d,#68471e);color:#fff0c2;font:12px/1.25 Georgia,serif!important;white-space:nowrap;letter-spacing:0;box-shadow:0 1px 3px #0006;text-shadow:0 1px #39250d}
 .game .journal-button:not(.has-rewards) .quest-completion-notice{display:none}
 .quest-announcement{animation:questInkAppear .7s ease-out}.reward-collected img{animation:rewardCollected .5s ease-out}
 @keyframes questInkAppear{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
