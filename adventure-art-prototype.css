@@ -8,7 +8,7 @@
 .art-rebuild-preview #game .hud .ui-stat {border:0;border-right:1px solid #c6ac6944;padding-inline:5px;background:none;border-image:none;box-shadow:none}
 .art-rebuild-preview #game .hud .ui-stat:before,.art-rebuild-preview #game .hud .ui-stat:after {display:none}
 .art-rebuild-preview #game .hud .ui-stat b {font-size:16px!important;color:#f6e2b4}
-.art-rebuild-preview #game .hud .ui-stat small {font-size:10.5px!important;letter-spacing:.15px;color:#e2d8b7}
+.art-rebuild-preview #game .hud .ui-stat small {font-size:var(--ui-label)!important;letter-spacing:.15px;color:#e2d8b7;text-shadow:0 1px 2px #000}
 .art-rebuild-preview #game .hud #profileButton {border:2px solid #c6a063;box-shadow:0 0 0 1px #06121b,inset 0 0 0 1px #f3cf8555;background:radial-gradient(#1c4141,#051c24)}
 .art-rebuild-preview #game .location {margin-inline:13px}
 .art-rebuild-preview #game .location .kicker {font-weight:bold!important;text-shadow:0 2px 3px #000}
@@ -103,7 +103,7 @@
   .art-rebuild-preview #game #combatLayout {grid-template-rows:32px 36px minmax(0,1fr) 46px 52px;padding-bottom:9px}
   .art-rebuild-preview #game .hud {padding-inline:0;margin-inline:4px;grid-template-columns:48px repeat(3,minmax(0,1fr))}
   .art-rebuild-preview #game .hud .ui-stat b {font-size:14px!important}
-  .art-rebuild-preview #game .hud .ui-stat small {font-size:9px!important;letter-spacing:0}
+  .art-rebuild-preview #game .hud .ui-stat small {font-size:var(--ui-label)!important;letter-spacing:0}
   .art-rebuild-preview #game #boundSprite {width:55px;height:55px}
   .art-rebuild-preview #game .battle-follower {width:48px;height:48px}
   .art-rebuild-preview #game .dock-scene-shortcuts {top:34px}

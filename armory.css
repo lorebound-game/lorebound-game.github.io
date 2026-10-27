@@ -2,7 +2,7 @@
 #armorySheet{width:min(460px,calc(100% - 20px));max-height:calc(100dvh - 20px - env(safe-area-inset-top) - env(safe-area-inset-bottom));height:auto!important;min-height:0!important;inset:0;margin:auto;padding:0;overflow:auto;overscroll-behavior:contain;background:linear-gradient(130deg,#152d32,#071722 65%);color:#f2e2ba;border:1px solid #b79a5a;box-shadow:0 16px 70px #000b;font:14px/1.4 Georgia,serif}
 #armorySheet[open]{display:block!important}#armorySheet::backdrop{background:#020d18c9;backdrop-filter:blur(4px)}
 #armorySheet>header{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0b1d27;border-bottom:1px solid #92784a}
-#armorySheet h2{font:26px Georgia,serif;margin:3px 0}#armorySheet small{font-size:10px;letter-spacing:2px;color:#d7bb7b}
+#armorySheet h2{font:26px Georgia,serif;margin:3px 0}#armorySheet small{font-size:var(--ui-label);letter-spacing:2px;color:#d7bb7b;font-family:Georgia,serif!important}
 #armoryClose{width:44px;min-height:44px;background:none;border:1px solid #8b764d;color:#ffe5b1;font:26px Georgia,serif}
 .equipment-summary{display:flex;flex-wrap:wrap;gap:5px 12px;justify-content:space-between;padding:12px 16px;background:#ffffff06}.equipment-summary strong{color:#ffe4a0}.equipment-summary span{font-size:12px;color:#c7d0cc}
 #armorySheet .armory-intro{padding:0 16px;color:#c7c3af;font-size:13px}#armoryItems{padding:0 12px;display:grid;gap:12px}
