@@ -15,7 +15,9 @@ host.querySelector('.town-center').onclick=()=>{center();building.focus({prevent
 viewport.addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,cx:camera.x,cy:camera.y,moved:false};suppressClick=false;});
 viewport.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>8&&!drag.moved){drag.moved=true;viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging');}if(drag.moved){camera={x:drag.cx+dx,y:drag.cy+dy};place();}});
 function finish(e){if(!drag||e.pointerId!==drag.id)return;suppressClick=drag.moved;drag=null;viewport.classList.remove('dragging');if(viewport.hasPointerCapture(e.pointerId))viewport.releasePointerCapture(e.pointerId);}
-viewport.addEventListener('pointerup',finish);viewport.addEventListener('pointercancel',finish);viewport.addEventListener('lostpointercapture',()=>{drag=null;viewport.classList.remove('dragging');});
+// Touch input starts captured by the element first touched; moving capture to the map fires lostpointercapture
+// on that element, which bubbles here. Only the map losing capture ends a drag, or phones stop after one step.
+viewport.addEventListener('pointerup',finish);viewport.addEventListener('pointercancel',finish);viewport.addEventListener('lostpointercapture',e=>{if(e.target!==viewport)return;drag=null;viewport.classList.remove('dragging');});
 viewport.addEventListener('click',e=>{if(suppressClick&&e.detail!==0){e.preventDefault();e.stopPropagation();suppressClick=false;}},true);
 building.onclick=()=>{sheet.showModal();host.querySelector('.town-close').focus();};
 sheet.addEventListener('close',()=>building.focus({preventScroll:true}));

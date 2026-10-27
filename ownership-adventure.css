@@ -20,6 +20,6 @@
 
 #levelButton{height:auto!important;min-height:48px;line-height:1.4}
 
-#economyAuto{font:14px/1.45 Georgia,serif;color:#e9ddbe}#economyAuto select,#economyAuto button{display:block;width:100%;min-height:44px;background:#16333d;color:#f1dca3;border:1px solid #b18b47;border-radius:5px;padding:8px;font:inherit}#economyAuto button:disabled{opacity:.5}
+#economyAuto{font:14px/1.45 Georgia,serif;color:#e9ddbe}#economyAuto select,#economyAuto button{display:block;width:100%;min-height:44px;background:#16333d;color:#f1dca3;border:1px solid #b18b47;border-radius:5px;padding:8px;font:inherit}#economyAuto button:disabled{opacity:.5}#economyAutoReason{color:#f2c27a}#economyAutoReason:empty{display:none}
 
 .dock-level{position:absolute;z-index:8;left:7px;top:7px;padding:2px 3px;border-radius:3px;background:#081923db;color:#f5dfa4;font:10px Georgia,serif}#economyAuto button{font:14px Georgia,serif!important;letter-spacing:normal!important}

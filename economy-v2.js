@@ -13,6 +13,7 @@ function unlock(s,expected=s.summoning.unlocked+1){const q=requirement(s);if(!q|
 function floorShards(floor){return floor<10?1:floor===10?3:2+(floor%10===0?5:0)+(floor===100?20:0);}
 function capacityOffer(s){const at=capacities.indexOf(s.summoning.autoCapacity||1);return at<6?{from:capacities[at],to:capacities[at+1],gold:capacityPrices[at]}:null;}
 function buyCapacity(s,expected){const q=capacityOffer(s);if(!q||q.from!==expected||s.pending||s.gold<q.gold)return {ok:false,reason:'Capacity offer unavailable'};s.gold-=q.gold;s.summoning.autoCapacity=q.to;return {ok:true};}
-function thresholdValid(s){const rank=s.summoning.settings.stopRank;return Number.isInteger(rank)&&rank>=0&&rank<3&&C.companions.some(h=>h.rank>=rank&&weight(s,h,s.summoning.selected)>0);}
+// stopRank 10 is "Don't stop for rarity": Auto then runs until capacity, Lore Shards, a discovery or a decision stops it.
+function thresholdValid(s){const rank=s.summoning.settings.stopRank;return rank===10||Number.isInteger(rank)&&rank>=0&&rank<3&&C.companions.some(h=>h.rank>=rank&&weight(s,h,s.summoning.selected)>0);}
 const api={active,enable,weight,weights,totals,unlockGold,discoveries,requirement,unlock,floorShards,questShards,achievementShards,capacities,capacityPrices,capacityOffer,buyCapacity,thresholdValid};root.LoreEconomy=api;if(typeof module!=='undefined')module.exports=api;
 })(globalThis);
