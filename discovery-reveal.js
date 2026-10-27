@@ -3,10 +3,11 @@
 'use strict';
 if(root.__LORE_REVIEW_ISOLATED__)return;
 const hierarchy=Object.freeze(['Common','Uncommon','Rare','Epic','Legendary','Mythic','Ancient','Exalted','Transcendent','Eternal']);
+// stages (ms): spiral, silhouette, burst and reveal, finish. Everyday tiers are quick; Rare keeps more build-up.
 const effects=Object.freeze({
- Common:Object.freeze({color:'#e5edf0',trails:1,particles:18,shape:'spark',rays:0,glow:8,stages:[420,1050,1450,2200]}),
- Uncommon:Object.freeze({color:'#a4ed64',trails:2,particles:28,shape:'leaf',rays:6,glow:14,stages:[500,1250,1800,2800]}),
- Rare:Object.freeze({color:'#46baff',trails:3,particles:40,shape:'rune',rays:12,glow:22,stages:[650,1550,2200,3500]})
+ Common:Object.freeze({color:'#e5edf0',trails:1,particles:18,shape:'spark',rays:0,glow:8,stages:[220,500,780,1200]}),
+ Uncommon:Object.freeze({color:'#a4ed64',trails:2,particles:28,shape:'leaf',rays:6,glow:14,stages:[300,750,1150,1800]}),
+ Rare:Object.freeze({color:'#46baff',trails:3,particles:40,shape:'rune',rays:12,glow:22,stages:[450,1100,1600,2600]})
 });
 const $=id=>document.getElementById(id);let timers=[],raf=0,canvas=null,started=0,current=null;
 const motion=root.matchMedia('(prefers-reduced-motion: reduce)');
