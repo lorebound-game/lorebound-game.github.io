@@ -61,11 +61,8 @@ function bootSavedGame(result){
  if(globalThis.LoreOwnershipAdventure&&!INTRO_PREVIEW){
   if(!saveRepo.exclusive||!globalThis.crypto?.subtle){savePaused=true;saveProtected=true;globalThis.LoreSaveBackups.protect('This browser cannot safely coordinate ownership saves. Use a browser with Web Locks and secure backup verification. No save was changed.');return;}
   if(result.kind==='current'&&result.state.version===4){globalThis.LoreOwnershipAdventure.migration(result.raw,saveRepo);return;}
-  if(result.kind==='current'&&result.state?.version===5&&!globalThis.LoreStory.active(result.state)){globalThis.LoreOwnershipAdventure.storyMigration(result.raw,saveRepo);return;}
-  if(result.kind==='current'&&result.state?.version===5&&!globalThis.LoreArmory.active(result.state)){globalThis.LoreOwnershipAdventure.storyMigration(result.raw,saveRepo,true);return;}
-  if(result.kind==='current'&&result.state?.version===5&&!globalThis.LoreEndless.enabled(result.state)){globalThis.LoreOwnershipAdventure.storyMigration(result.raw,saveRepo,false,true);return;}
-  if(result.kind==='current'&&result.state?.version===5&&!globalThis.LoreExpeditions.enabled(result.state)){globalThis.LoreOwnershipAdventure.storyMigration(result.raw,saveRepo,false,false,true);return;}
-  if(result.kind==='current'&&result.state?.version===5&&!globalThis.LoreRecruitment.enabled(result.state)){globalThis.LoreOwnershipAdventure.storyMigration(result.raw,saveRepo,false,false,false,true);return;}
+  // Every feature update a version 5 save still needs comes in one popup, with one backup, one commit and one reload.
+  if(result.kind==='current'&&result.state?.version===5&&globalThis.LoreSaveStorage.needsUpdate(result.state)){globalThis.LoreOwnershipAdventure.saveUpdates(result.raw,saveRepo);return;}
   if(result.state?.version===5)globalThis.LoreRealmSystems.enable(globalThis.LoreEconomy.enable(globalThis.LoreOwnership.hydrate(result.state)));
  }
 
