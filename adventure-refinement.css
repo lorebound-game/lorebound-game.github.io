@@ -3,7 +3,7 @@
 .adventure-refined #game #combatLayout{display:block;padding:0;overflow:hidden}
 .adventure-refined #game .location{height:36px}
 .adventure-refined #game #battlefield{position:absolute;top:36px;left:0;height:calc(var(--court-y) - 36px);width:100%;container-type:normal}
-.adventure-refined #game .enemy-sprite,.adventure-refined #game.dock-is-collapsed .enemy-sprite{--enemy-size:clamp(100px,15dvh,140px);bottom:48px}
+.adventure-refined #game .enemy-sprite,.adventure-refined #game.dock-is-collapsed .enemy-sprite{--enemy-size:clamp(100px,15dvh,140px);bottom:78px}
 .adventure-refined #game #partyStage{position:absolute;top:calc(var(--court-y) - 48px);height:64px;left:0;right:0;margin:0;transform:none}
 .adventure-refined #game #boundSprite,.adventure-refined #game .battle-follower{width:clamp(58px,18vw,78px);height:clamp(58px,18vw,78px);bottom:var(--court-depth,0px);filter:drop-shadow(0 6px 3px #001014b0)}
 .adventure-refined #game .enemy-info{position:absolute;top:auto;bottom:calc(20px + clamp(100px,15dvh,140px));left:50%;translate:-50% 0;width:160px;margin:0;pointer-events:none}

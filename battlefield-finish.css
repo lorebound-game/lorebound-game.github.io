@@ -12,8 +12,13 @@
 .adventure-refined #game #partyStage .phase1-art>img{filter:brightness(1.07) contrast(1.04)}
 .adventure-refined #game #enemySprite.realm-illustrated>img{filter:brightness(1.04) contrast(1.04)}
 /* Contact shadows use the derivative's 95% foot anchor; hovering species get a softer oval. */
-.adventure-refined #game #partyStage .phase1-host{isolation:isolate;filter:drop-shadow(0 3px 2px #001014a6)}
+.adventure-refined #game #partyStage .phase1-host{isolation:isolate;filter:drop-shadow(0 0 1px #000d) drop-shadow(0 0 1px #000d) drop-shadow(0 5px 4px #000b)}
 .adventure-refined #game #partyStage .phase1-host:before{content:'';position:absolute;left:18%;right:18%;bottom:1%;height:10%;border-radius:50%;background:radial-gradient(ellipse,#020d15b8,transparent 72%);z-index:-1;pointer-events:none;filter:blur(1px)}
 .adventure-refined #game #partyStage .phase1-host[data-motion=hover]:before{left:24%;right:24%;height:8%;opacity:.65;filter:blur(2px)}
 .adventure-refined #game #enemySprite.realm-illustrated:before{content:'';position:absolute;left:19%;right:19%;bottom:1%;height:9%;border-radius:50%;background:radial-gradient(ellipse,#020d15c4,transparent 72%);pointer-events:none;filter:blur(2px);z-index:-1}
 .adventure-refined #game #enemySprite.realm-illustrated{isolation:isolate}
+/* Fighters stand out from the busy painted backgrounds: a thin dark outline and a grounded shadow. The hit flash keeps the outline. */
+.adventure-refined #game:not(.boss-room) .enemy-sprite{filter:drop-shadow(0 0 1px #000d) drop-shadow(0 0 1px #000d) drop-shadow(0 6px 5px #000b)}
+.adventure-refined #game:not(.boss-room) .enemy-sprite.struck{filter:brightness(1.18) drop-shadow(0 0 1px #000d) drop-shadow(0 0 1px #000d) drop-shadow(0 0 3px #d7c89b)}
+/* A soft dark pool behind the fight, so the fighters don't stand on the brightest part of the painting */
+.adventure-refined #game:not(.boss-room) #combatLayout:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 72% 26% at 50% calc(var(--court-y) - 34px),#020b12a6,#020b1259 45%,transparent 72%)}
