@@ -76,7 +76,7 @@
 .art-rebuild-preview #game.dock-is-collapsed {--dock-rail-height:82px}
 .art-rebuild-preview #game.dock-is-collapsed #combatLayout {--actor-rise:clamp(24px,5dvh,47px)}
 .art-rebuild-preview #game.dock-is-collapsed .adventure-deck {height:44px;overflow:visible;margin-inline:5px;border-radius:12px 12px 0 0;background:linear-gradient(#071824a8,#07121a22)}
-.art-rebuild-preview #game.dock-is-collapsed #dockHandle {inset:0;width:100%;height:44px;min-height:44px;transform:none;border:0;border-radius:0;background:none;gap:12px;padding:0 22px;justify-content:center;align-items:center}
+.art-rebuild-preview #game.dock-is-collapsed #dockHandle {inset:0;width:100%;max-width:none;height:44px;min-height:44px;transform:none;border:0;border-radius:0;background:none;gap:12px;padding:0 22px;justify-content:center;align-items:center}
 .art-rebuild-preview #game.dock-is-collapsed #dockHandle .handle-notch {top:-14px;left:calc(50% - 22px);width:44px;height:20px;background:radial-gradient(ellipse at 50% 100%,#0e2632 55%,transparent 58%)}
 .art-rebuild-preview #game.dock-is-collapsed #dockHandle .handle-notch svg {width:20px;height:10px;margin-top:6px}
 .art-rebuild-preview #game #dockHandleLabel {font:12px/1.2 Georgia,serif!important;color:#e6cc8e;min-width:45px}

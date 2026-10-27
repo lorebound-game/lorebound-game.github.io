@@ -18,7 +18,11 @@
 /* Remove the visible title without removing the named panel or its controls. */
 .adventure-dock-preview.art-rebuild-preview #game:not(.dock-is-collapsed) .adventure-deck{height:calc(22px + var(--dock-panel-height));overflow:visible}
 .adventure-dock-preview.art-rebuild-preview #game .dock-heading{height:22px;padding:0;border:0;background:none;position:relative}
-.adventure-dock-preview.art-rebuild-preview #game #dockToggle{position:absolute;right:8px;top:-22px;width:44px;height:44px;min-height:44px;border:1px solid #8b7548;border-radius:12px 12px 3px 3px;background:#091d28;z-index:8}
+/* A centred chevron inside the tray's top strip, clear of the corner ornaments and the Challenge Boss button */
+.adventure-dock-preview.art-rebuild-preview #game #dockToggle{position:absolute;left:calc(50% - 30px);right:auto;top:0;width:60px;height:22px;min-height:22px;border:0;border-radius:0;background:none;z-index:9}
+.adventure-dock-preview.art-rebuild-preview #game #dockToggle span{display:none}
+.adventure-dock-preview.art-rebuild-preview #game #dockToggle:before{content:'';width:20px;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 12%27%3E%3Cpath d=%27M5 3l7 6 7-6%27 fill=%27none%27 stroke=%27%23f1d89e%27 stroke-width=%272.4%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") center/20px 10px no-repeat}
+.adventure-dock-preview.art-rebuild-preview #game #dockToggle:after{content:'';position:absolute;inset:0 -6px -8px}
 .adventure-dock-preview.art-rebuild-preview #game .art-crest{display:none}
 .adventure-refined #game:not(.boss-room) .battle-panel{top:auto;bottom:6px;height:44px}
 .adventure-refined #game:not(.boss-room){--court-y:var(--art-court-y,clamp(110px,calc(100dvh - 535px),375px))}

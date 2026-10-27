@@ -21,9 +21,9 @@
 .adventure-dock-preview #game .hud .ui-stat b {font:bold 17px/1.2 Georgia,serif!important;color:#f7e6bc}
 .adventure-dock-preview #game .hud .ui-stat small {font:11px/14px Georgia,serif!important;color:#c4c7b7}
 .adventure-dock-preview #game .hud .resource-emblem {width:17px;height:18px}
-.adventure-dock-preview #game .hud #profileButton {position:relative;width:48px;height:48px;min-width:44px;min-height:44px;padding:3px;border:1px solid #c5a364;border-image:none;border-radius:50%;background:radial-gradient(#17373e,#06131c);box-shadow:inset 0 0 0 2px #0b2029;overflow:hidden}
-.adventure-dock-preview #game .hud #hudPortrait {position:relative;width:38px;height:38px;margin:0 auto;border-radius:50%}
-.adventure-dock-preview #game .hud #playerLevel {position:absolute;top:auto;bottom:0;left:50%;right:auto;translate:none;transform:translateX(-50%);height:15px;min-height:15px;max-height:15px;min-width:30px;padding:0 3px;border:0;background:#07131be8;font:var(--ui-label)/15px Georgia,serif!important;color:#ead7a7}
+.adventure-dock-preview #game .hud #profileButton {position:relative;width:48px;height:48px;min-width:44px;min-height:44px;padding:3px;border:1px solid #c5a364;border-image:none;border-radius:50%;background:radial-gradient(#17373e,#06131c);box-shadow:inset 0 0 0 2px #0b2029;overflow:visible}
+.adventure-dock-preview #game .hud #hudPortrait {position:relative;width:38px;height:38px;margin:0 auto;border-radius:50%;overflow:hidden}
+.adventure-dock-preview #game .hud #playerLevel {position:absolute;top:auto;bottom:-8px;left:50%;right:auto;translate:none;transform:translateX(-50%);width:max-content;height:17px;min-height:17px;max-height:17px;min-width:30px;padding:0 6px;border:1px solid #c6a063;border-radius:8px;white-space:nowrap;background:#07131b;font:var(--ui-label)/15px Georgia,serif!important;color:#ead7a7}
 .adventure-dock-preview #game .hud #playerLevel:before {content:'Lv. ';color:#bca675}
 /* The existing scene nodes and animation classes remain intact. */
 .adventure-dock-preview #game #combatLayout {grid-row:2;grid-column:1;position:relative;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:40px 44px minmax(0,1fr) 60px 56px;min-height:0;padding:0 0 10px}
