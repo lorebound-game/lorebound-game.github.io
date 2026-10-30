@@ -4,7 +4,6 @@
 .party-services #game #dockPages{overflow:hidden;touch-action:pan-y}
 .party-services #game #dockPanel-party{width:100%;flex:0 0 100%}
 .party-services #game #autoAccess{grid-column:3;align-self:stretch;min-height:44px;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:0;background:transparent;color:#efdcb7;font:15px Georgia,serif!important;padding:0 4px}
-.party-services #autoAccess small{font:var(--ui-label) Georgia,serif!important;color:#c5bbd8;white-space:nowrap;text-shadow:0 1px 2px #000}
 .party-services #game #autoAccess:focus-visible{outline:2px solid #f3d38c;outline-offset:-3px}
 .party-services .training-intro{padding:8px 0 12px;border-bottom:1px solid #a88c514d}
 .party-services .training-intro small{font:10px Georgia,serif!important;letter-spacing:1px;color:#c2aa7b}
@@ -75,9 +74,12 @@
 .party-services #tomeTierCards [aria-pressed=true] small{color:#ffe8b4}
 #trainingSheet::backdrop{background:#020b17a8;backdrop-filter:blur(3px)}
 
-/* One Auto button: "Auto · Set up" when off, "Stop · N opened" while running. */
-.party-services #game #autoAccess.is-running span{color:#f6d68f}
-.party-services #game #autoAccess.is-running{box-shadow:inset 0 0 0 1px #b18b4799;border-radius:4px}
+/* One Auto button: a small antique-gold icon when off, a compact red "Stop Auto" while running. The whole rail cell
+   stays the tap target (at least 44px) even though the visible button is small. */
+.party-services #game #autoAccess .auto-access-icon{width:24px;height:24px;fill:none;stroke:#d8bd7e;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px #000)}
+.party-services #game #autoAccess.is-running .auto-access-icon{display:none}
+.party-services #game #autoAccess .auto-access-stop{max-width:100%;padding:4px 5px;background:linear-gradient(#a3333b,#6f1d25);border:1px solid #e3a0a0;border-radius:3px;color:#fff3ea;font:13px/1.15 Georgia,serif!important;text-align:center;text-shadow:0 1px 1px #0009}
+.party-services #game #autoAccess .auto-access-stop[hidden]{display:none}
 .dock-sr-only{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important}
 /* Auto setup (Joshua's approved design): a matte dark navy panel with thin bronze trim, a small violet Tome emblem,
    ten 44px rarity rows, "Open per cycle" and one large violet Start. Only the rarity list scrolls on short screens, so
@@ -104,7 +106,10 @@
 #economyAuto .auto-name{flex:1;min-width:0;text-align:left;font-size:14px;color:#e9ddbe;text-transform:uppercase}
 #economyAuto .auto-row:has(input:checked) .auto-name{color:#f1d899}
 #economyAuto .auto-pct{flex:none;font-size:14px;color:#f1d899;white-space:nowrap}
-#economyAuto .auto-row.is-zero .auto-name,#economyAuto .auto-row.is-zero .auto-pct{color:#a69c88}
+#economyAuto .auto-row.is-zero .auto-name,#economyAuto .auto-row.is-zero .auto-pct,#economyAuto .auto-row.is-zero:has(input:checked) .auto-name{color:#a69c88}
+/* A rarity this Tome can't give: its box is greyed out and can't be ticked, but the row and its 0% stay readable. */
+#economyAuto .auto-row.is-zero,#economyAuto .auto-row.is-zero:has(input:checked){cursor:default;border-color:#a8854f26;background:#060f17}
+#economyAuto .auto-row.is-zero input,#economyAuto .auto-row.is-zero input:checked{border-color:#6f6a5e;background-color:#2a2c2c;opacity:.6}
 #economyAuto .auto-quantity{flex:none;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 8px;padding-top:10px;border-top:1px solid #a8854f80;font-size:15px;color:#f1d899}
 #economyAuto .auto-quantity>span{white-space:nowrap}
 #economyAuto .auto-stepper{flex:0 1 190px;min-width:0;display:flex;align-items:stretch;border:1px solid #a8854f;border-radius:3px;background:#07131d}
@@ -119,12 +124,9 @@
 #economyAuto #economyAutoReason:empty{display:none}
 .party-services #autoSettingsSheet.economy-auto>#settingsStartAuto{flex:none;min-height:52px;background:linear-gradient(#6a4a9c,#48306f);color:#f6ecd6;font:17px Georgia,serif!important;letter-spacing:normal!important;text-transform:uppercase}
 .party-services #autoSettingsSheet.economy-auto>#settingsStartAuto:disabled{opacity:.55}
-/* During Auto, each released result pops as a small sprite over the Tome (about half its size), then fades. */
-.auto-stream{position:absolute;left:calc(50% - 42px);top:4px;width:36px;height:36px;pointer-events:none;z-index:3}
-.auto-stream-sprite{position:absolute;inset:0;display:block;filter:drop-shadow(0 0 5px color-mix(in srgb,var(--stream-color,#e0c183) 55%,transparent));animation:auto-stream-pop var(--stream-ms,750ms) ease-out both}
-.auto-stream-sprite .companion-art,.auto-stream-sprite .starter-sheet,.auto-stream-sprite img{display:block;width:100%!important;height:100%!important;object-fit:contain}
-@keyframes auto-stream-pop{0%{opacity:0;transform:translateY(6px) scale(.6)}25%{opacity:1;transform:translateY(-14px) scale(1)}70%{opacity:1;transform:translateY(-20px) scale(1)}100%{opacity:0;transform:translateY(-26px) scale(.9)}}
-.summon-portal.auto-opening .summon-book{animation:auto-tome-shake .32s ease-in-out}
-@keyframes auto-tome-shake{0%,100%{rotate:0deg}25%{rotate:-3deg}75%{rotate:3deg}}
-@media (prefers-reduced-motion:reduce){.auto-stream-sprite{animation:auto-stream-still var(--stream-ms,750ms) step-end both}.summon-portal.auto-opening .summon-book{animation:none}}
-@keyframes auto-stream-still{0%{opacity:1}100%{opacity:0}}
+/* During Auto, each released result shows as a small sprite centred inside the portal (about half the Tome's size).
+   It stays at full opacity, without fades or scaling, until the next one's loaded picture replaces it. Nothing stacks,
+   and the Tome stays still underneath. */
+.auto-stream{position:absolute;left:calc(50% - 18px);top:calc(50% - 18px);width:36px;height:36px;pointer-events:none;z-index:3}
+.auto-stream-sprite{position:absolute;inset:0;display:block;filter:drop-shadow(0 0 5px color-mix(in srgb,var(--stream-color,#e0c183) 55%,transparent))}
+.auto-stream-sprite .companion-art,.auto-stream-sprite .starter-sheet,.auto-stream-sprite img{display:block;width:100%!important;height:100%!important;object-fit:contain;filter:none}
