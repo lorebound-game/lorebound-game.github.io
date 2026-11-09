@@ -1,0 +1,16 @@
+{
+ "builtFrom": "pocket-fortune/dist",
+ "bundled": false,
+ "entries": [
+  "index.html",
+  "prologue.html",
+  "home.html",
+  "save-backups.html"
+ ],
+ "bundles": {
+  "index.html": [],
+  "prologue.html": [],
+  "home.html": [],
+  "save-backups.html": []
+ }
+}
